@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kuchu Puchu — A Birthday Surprise</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kritika, Kuchu Puchu 🎀</title>
 <style>
-:root{--rose:#b76e79;--ink:#49343b;--cream:#fffaf6;--gold:#c6a15b;--pink:#f7e6e8}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
-.page{min-height:100svh;display:none;align-items:center;justify-content:center;text-align:center;padding:28px 20px;position:relative;overflow:hidden;background:radial-gradient(circle at top,#fff 0,#fffaf6 58%,#f8e9e9 100%)}
-.page.active{display:flex;animation:fade .65s ease}.content{width:min(680px,100%);position:relative;z-index:2}
-.eyebrow{letter-spacing:.25em;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--gold)}h1{font-size:clamp(2.7rem,9vw,5.5rem);font-weight:400;line-height:1.05;margin:18px 0;color:var(--rose)}h2{font-size:clamp(2rem,6vw,3.2rem);font-weight:400;margin:14px 0;color:var(--rose)}p{line-height:1.8;font-size:1.05rem}.ornament{color:var(--gold);letter-spacing:.4em;font-size:1.3rem;margin:18px}
-button,.upload-label{background:var(--rose);color:white;border:0;border-radius:40px;padding:13px 23px;font-size:14px;letter-spacing:.04em;cursor:pointer;margin:8px;box-shadow:0 8px 20px #b76e7925}button.secondary{background:transparent;color:var(--rose);border:1px solid #d9aeb4;box-shadow:none}.small{font:12px Arial,sans-serif;letter-spacing:.06em;color:#8b7077}
-.heart{font-size:clamp(7rem,24vw,12rem);cursor:pointer;display:inline-block;filter:drop-shadow(0 10px 12px #b76e7930);animation:pulse 1.7s infinite}.heart.open{animation:pop .5s forwards}
-.cake{font-size:6rem;margin:12px}.lyrics{white-space:pre-line;background:#fff8f4;border:1px solid #ead8d0;border-radius:18px;padding:16px;line-height:1.8;margin:18px auto;max-width:420px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:18px 0}.gallery img{width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid #ead8d0}.upload-label{display:inline-block}
-.question{font-size:1.1rem;margin:24px 0 12px}.answers{display:grid;gap:9px;max-width:480px;margin:auto}.answers button{background:#fff;color:var(--ink);border:1px solid #ead8d0;box-shadow:none;text-align:left}.answers button:hover{background:var(--pink)}.feedback{min-height:24px;color:var(--rose)}
-.wish{text-align:left;background:#fffdfb;border:1px solid #ead8d0;padding:clamp(20px,5vw,36px);border-radius:22px;box-shadow:0 12px 40px #8e59600c}.wish p{font-size:1rem}
-.float{position:absolute;font-size:2rem;opacity:.35;animation:float 7s ease-in-out infinite}.float:nth-child(1){left:8%;top:15%}.float:nth-child(2){right:9%;top:25%;animation-delay:1s}.float:nth-child(3){left:18%;bottom:12%;animation-delay:2s}.float:nth-child(4){right:15%;bottom:14%;animation-delay:3s}
-.shayari{font-size:1.18rem;line-height:2;background:#fffdfb;border:1px solid #ead8d0;border-radius:20px;padding:25px}
-.nav{position:absolute;bottom:15px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:8px;z-index:5}.dots{font:11px Arial,sans-serif;color:#a78a8f;margin:0 6px}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{transform:scale(1.06)}}@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.4) rotate(-8deg)}100%{transform:scale(0);opacity:0}}@keyframes float{50%{transform:translateY(-22px) rotate(7deg)}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
-</style></head>
+:root{--rose:#b76e79;--pink:#f7dfe4;--cream:#fffaf5;--gold:#c5a15a;--ink:#49343b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#fff 0,#fff7f5 42%,#f6e2e5 100%);color:var(--ink);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+.page{display:none;min-height:100vh;padding:28px 18px 36px;align-items:center;justify-content:center;text-align:center}.page.active{display:flex;animation:fade .7s ease}
+.panel{width:min(720px,100%);padding:clamp(22px,5vw,46px);border:1px solid #e8d3b3;border-radius:26px;background:#fffaf4eF;box-shadow:0 16px 50px #875a6417}
+.eyebrow{letter-spacing:.25em;text-transform:uppercase;font:11px Arial,sans-serif;color:#a47b6a}.title{font-size:clamp(34px,8vw,64px);font-weight:normal;line-height:1.05;margin:15px 0;color:#8d5364}.sub{font-size:clamp(16px,4vw,20px);line-height:1.7}.btn{border:0;border-radius:999px;background:#9e596d;color:white;padding:13px 22px;font-size:15px;letter-spacing:.04em;margin:8px;cursor:pointer;box-shadow:0 7px 18px #9e596d24}.btn.secondary{background:#f3e5df;color:#714b55;border:1px solid #e4c9bd}.ornament{color:var(--gold);font-size:25px;margin:14px}.heart{font-size:100px;cursor:pointer;animation:pulse 1.4s infinite;filter:drop-shadow(0 8px 12px #b76e7930)}
+.cake{font-size:94px;line-height:1.2}.candle{display:inline-block;position:relative;font-size:38px;cursor:pointer;transition:transform .25s}.flame{display:block;width:13px;height:22px;background:radial-gradient(ellipse at 50% 70%,#fff6a8 0 20%,#ffc04b 45%,#f28a46 75%);border-radius:70% 20% 65% 40%;transform:rotate(12deg);margin:0 auto -2px;animation:flicker .16s infinite alternate;box-shadow:0 0 20px #ffbf5b}
+.flame.out{display:none}.hint{font:13px Arial,sans-serif;color:#946f72;margin-top:12px}.wish{font-size:clamp(15px,3.8vw,18px);line-height:1.8;text-align:left;white-space:pre-line}.photo{display:block;width:min(100%,380px);max-height:440px;object-fit:contain;margin:18px auto;border-radius:18px;border:5px solid white;box-shadow:0 8px 28px #58374220}.photo-placeholder{width:min(100%,340px);margin:18px auto;padding:35px 20px;border:1px dashed #d9b7bd;border-radius:18px;background:#fff4f5;color:#986b75}.quiz-q{font-size:21px;line-height:1.5}.option{display:block;width:100%;max-width:500px;margin:10px auto;padding:13px;border-radius:14px;border:1px solid #e6ccd0;background:#fff;color:#63414a;text-align:left;cursor:pointer}.option:hover{background:#fbe9ed}.feedback{min-height:24px;color:#9e596d}.balloons{font-size:52px;letter-spacing:8px;animation:float 2s infinite alternate}.small{font:12px Arial,sans-serif;color:#9b7c7e;margin-top:22px}.upload{display:block;margin:14px auto;font:13px Arial,sans-serif;max-width:100%}
+@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{transform:scale(1.08)}}@keyframes flicker{to{transform:rotate(-9deg) scale(.9)}}@keyframes float{to{transform:translateY(-12px)}}
+</style>
+</head>
 <body>
-<section class="page active" id="p0"><div class="content"><div class="eyebrow">A little birthday surprise</div><div class="ornament">✧ ─── ♡ ─── ✧</div><h1>Kritika,<br><i>Kuchu Puchu</i> 😚</h1><p>A tiny corner of the universe, made just for your special day.</p><div class="ornament">✦ 24 · 11 · 2026 ✦</div><button onclick="go(1)">Enter your little world ✨</button><p class="small">MADE WITH ♡ BY ARYAN</p></div></section>
-<section class="page" id="p1"><div class="content"><div class="eyebrow">For the birthday girl</div><h2>A little love, wrapped in a bow</h2><p>Tap the heart… there’s a tiny surprise inside.</p><div class="heart" id="heart" onclick="popHeart()">💗</div><p id="heartText" class="small">ONE TAP AWAY FROM A SURPRISE</p><button onclick="go(2)">Next surprise →</button></div></section>
-<section class="page" id="p2"><div class="content"><div class="eyebrow">Make a wish</div><h2>One candle. A thousand wishes.</h2><div class="cake">🎂</div><p>Tap the candle button to make your birthday wish.</p><button onclick="birthdaySong()">🕯️ Blow the candle & play the birthday song</button><div class="lyrics">Happy birthday to you
-Happy birthday to you
-Happy birthday, dear Kritika
-Happy birthday to you! 🎶</div><p class="small" id="songStatus">Your photo memories can go here 💌</p><label class="upload-label" for="photos">＋ Add your photos</label><input id="photos" type="file" accept="image/*" multiple hidden onchange="addPhotos(event)"><div class="gallery" id="gallery"></div><button onclick="go(3)">Let’s play a quiz →</button></div></section>
-<section class="page" id="p3"><div class="content"><div class="eyebrow">A tiny friendship quiz</div><h2>How well do you know us?</h2><div id="quiz"></div><div class="feedback" id="feedback"></div><button class="secondary" onclick="resetQuiz()">Try again</button><button onclick="go(4)">Read your birthday wish →</button></div></section>
-<section class="page" id="p4"><div class="content"><div class="eyebrow">A note from Aryan</div><h2>For your 18th chapter ✨</h2><div class="wish">
-<p><b>Happy 18th Birthday, Kritika! 🎂🎀</b></p>
-<p>Welcome to a beautiful new chapter of your life! ✨ May your 18th year be filled with endless happiness, unforgettable memories, success, and countless reasons to smile.</p>
-<p>You deserve all the beautiful things this world has to offer. Never stop being your cute, crazy, and wonderful self. Keep chasing your dreams, spreading happiness, and making every moment special.</p>
-<p>From our silly fights to our random conversations, every little memory has its own place in this friendship. May we always keep laughing at the smallest things, teasing each other for no reason, and creating memories worth remembering.</p>
-<p>Stay blessed, keep shining, and never let that beautiful smile fade. May all your wishes come true and may this new journey bring you everything your heart hopes for. 💗</p>
-<p><b>Happy 18th Birthday, Kuchu Puchu! 😚🎀</b></p><p>With lots of wishes and friendship,<br><b>— Aryan ✨</b></p>
-</div><button onclick="go(5)">Let’s celebrate →</button></div></section>
-<section class="page" id="p5"><span class="float">🎈</span><span class="float">✨</span><span class="float">🎀</span><span class="float">🎉</span><div class="content"><div class="eyebrow">Today is all about you</div><h1>Keep shining,<br>Kritika ✨</h1><p>May your year be softer, brighter, funnier, and full of beautiful surprises.</p><div class="ornament">♡ ✦ ♡ ✦ ♡</div><button onclick="go(6)">One last thing…</button></div></section>
-<section class="page" id="p6"><div class="content"><div class="eyebrow">The final page</div><h2>Birthday wali shayari 😂</h2><div class="shayari">Kuchu Puchu ka style bemisaal,<br>reply mein “so gye” — kya kamaal!<br>Birthday pe cake aur gifts ki line,<br>par treat dene ki baari aaye toh offline! 😂<br><br>Hasti rehna, chamakti rehna,<br>aur Aryan ko tang karna…<br>yeh haq kabhi mat khona. 🎀</div><div class="ornament">THE END · BUT FRIENDSHIP CONTINUES</div><button onclick="go(0)">Replay the surprise ↺</button><p class="small">MADE WITH ♡ BY ARYAN</p></div></section>
+<section class="page active" id="p0"><div class="panel"><div class="eyebrow">A little royal surprise</div><div class="ornament">✧ ♡ ✧</div><h1 class="title">Kritika,<br>Kuchu Puchu 😚</h1><p class="sub">A little sparkle, a little sweetness,<br>and a whole lot of birthday love.</p><button class="btn" onclick="go(1)">Enter your little world ✨</button><div class="small">made with ♡ by Aryan</div></div></section>
+<section class="page" id="p1"><div class="panel"><div class="eyebrow">A tiny surprise</div><div class="heart" onclick="go(2)">💗</div><h2 class="title">For you, Kuchu Puchu</h2><p class="sub">Tap the heart to open your surprise.</p><button class="btn" onclick="go(2)">Open surprise 🎀</button></div></section>
+<section class="page" id="p2"><div class="panel"><div class="eyebrow">Make a birthday wish</div><h2 class="title">One little candle…</h2><div class="cake">🎂</div><div class="candle" id="candle" onclick="blowCandle()" aria-label="Blow out candle"><span class="flame" id="flame"></span>🕯️</div><p class="sub">Take a wish, then tap the candle to blow it out.</p><p class="hint" id="candleHint">Your birthday surprise is waiting…</p><button class="btn" id="blowBtn" onclick="blowCandle()">Blow out the candle ✨</button></div></section>
+<section class="page" id="p3"><div class="panel"><div class="eyebrow">A day made just for you</div><div class="ornament">✦ ✧ 🎀 ✧ ✦</div><h1 class="title" style="font-weight:bold;letter-spacing:.045em;text-shadow:2px 3px 0 #f2d9dd,0 8px 25px #b76e7930">HAPPY<br>BIRTHDAY</h1><h2 style="font-size:clamp(38px,10vw,76px);line-height:1;margin:8px 0 18px;color:#9e596d;font-weight:bold;letter-spacing:.03em;text-shadow:2px 3px 0 #f2d9dd">KRITIKA 🎀</h2><p class="sub" style="font-style:italic;color:#a47b6a">✧ Your day. Your magic. ✧</p><div id="songStatus" class="hint">♪ Your birthday song is ready</div><div id="photoArea"><div class="photo-placeholder">📸<br><br>Add Kritika’s photo here<br><small>Choose her photo below to show it in the birthday reveal.</small></div></div><label class="hint" for="photoUpload">Add Kritika’s photo</label><input class="upload" id="photoUpload" type="file" accept="image/*" onchange="loadPhoto(event)"><button class="btn" onclick="go(4)">A little message 💌</button></div></section>
+<section class="page" id="p4"><div class="panel"><div class="eyebrow">A message from Aryan</div><h2 class="title">For you, Kritika 💗</h2><div class="wish">Happy 18th Birthday, Kritika! 🎂🎀
+
+Welcome to a beautiful new chapter of your life! ✨ May your 18th year be filled with endless happiness, unforgettable memories, success, and countless reasons to smile.
+
+You deserve all the beautiful things this world has to offer. Never stop being your cute, crazy, and wonderful self. Keep chasing your dreams, spreading happiness, and making every moment special.
+
+From our silly fights to our random conversations, every little memory has its own place in this friendship. May we always keep laughing at the smallest things, teasing each other for no reason, and creating memories worth remembering.
+
+Stay blessed, keep shining, and never let that beautiful smile fade. May all your wishes come true and may this new journey bring you everything your heart hopes for. 💗
+
+Happy 18th Birthday, Kuchu Puchu! 😚🎀
+
+With lots of wishes and friendship,
+— Aryan ✨</div><button class="btn" onclick="go(5)">Let’s celebrate 🎉</button></div></section>
+<section class="page" id="p5"><div class="panel"><div class="eyebrow">Birthday mode: ON</div><div class="balloons">🎈 🎉 🎈</div><h2 class="title">Keep shining!</h2><p class="sub">Today is all about you, your smile, and all the lovely things ahead.</p><button class="btn" onclick="go(6)">One last thing… 💌</button></div></section>
+<section class="page" id="p6"><div class="panel"><div class="eyebrow">Specially for Kuchu Puchu</div><h2 class="title">Birthday wali shayari 😂</h2><p class="sub">Kuchu Puchu ka style bemisaal,<br>reply mein “so gye” — kya kamaal!<br>Birthday pe cake aur gifts ki line,<br>par treat dene ki baari aaye toh offline! 😂<br><br>Hasti rehna, chamakti rehna,<br>aur Aryan ko tang karna…<br>yeh haq kabhi mat khona. 🎀</p><div class="ornament">♡ ✧ ♡</div><p class="small">made with ♡ by Aryan</p><button class="btn secondary" onclick="go(0)">Replay from the beginning ↺</button></div></section>
+<audio id="birthdayAudio" src="happy-birthday-classic.mp3" preload="auto"></audio>
 <script>
-let current=0;function go(n){document.getElementById('p'+current).classList.remove('active');current=n;document.getElementById('p'+current).classList.add('active');window.scrollTo(0,0)}
-function popHeart(){let h=document.getElementById('heart');h.classList.add('open');document.getElementById('heartText').textContent='SURPRISE! YOU DESERVE ALL THE HAPPINESS 💗';setTimeout(()=>{h.classList.remove('open');h.textContent='💝'},520)}
-function birthdaySong(){document.getElementById('songStatus').textContent='Happy Birthday, Kritika! 🎶';try{let ctx=new (window.AudioContext||window.webkitAudioContext)();let notes=[392,392,440,392,523,494,392,392,440,392,587,523,392,392,784,659,523,494,440,698,698,659,523,587,523];notes.forEach((f,i)=>{let o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,ctx.currentTime+i*.28);g.gain.exponentialRampToValueAtTime(.12,ctx.currentTime+i*.28+.02);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+i*.28+.23);o.connect(g);g.connect(ctx.destination);o.start(ctx.currentTime+i*.28);o.stop(ctx.currentTime+i*.28+.25)})}catch(e){}}
-function addPhotos(e){let g=document.getElementById('gallery');[...e.target.files].forEach(f=>{let img=document.createElement('img');img.alt='Birthday memory';img.src=URL.createObjectURL(f);g.appendChild(img)})}
-const qs=[{q:'Aryan aur Kritika ki friendship ki vibe kya hai?',a:['Ladna aur phir baat karna 😂','Sirf serious talks','Ek dusre ko ignore karna'],c:0},{q:'Kritika ko ek royal title dena ho toh?',a:['Queen of Banaras','Drama Queen 👑','Cutie Patootie 🎀'],c:2},{q:'Aryan ka message late aaye toh Kritika kya bolti hai?',a:['Koi baat nahi','Good morning 😂','So gye 😴🎀'],c:2}];let qi=0,score=0;
-function renderQuiz(){let q=qs[qi];document.getElementById('quiz').innerHTML='<div class="question"><span class="small">QUESTION '+(qi+1)+' OF '+qs.length+'</span><br>'+q.q+'</div><div class="answers">'+q.a.map((a,i)=>'<button onclick="answer('+i+')">'+String.fromCharCode(65+i)+') '+a+'</button>').join('')+'</div>'}
-function answer(i){let q=qs[qi];let fb=document.getElementById('feedback');if(i===q.c){score++;fb.textContent='Correct! You know this friendship 😂💗'}else fb.textContent='Oops! Nice try 😚';qi++;if(qi<qs.length)setTimeout(renderNext,700);else setTimeout(()=>{document.getElementById('quiz').innerHTML='<h2>'+score+' / '+qs.length+' correct! 🎀</h2><p>Thanks for playing, Kuchu Puchu!</p>';fb.textContent=''},700)}
-function renderNext(){renderQuiz();document.getElementById('feedback').textContent=''}
-function resetQuiz(){qi=0;score=0;document.getElementById('feedback').textContent='';renderQuiz()}renderQuiz();
-</script></body></html>
+let current=0, revealed=false, audioCtx=null, songTimer=null;
+function go(n){document.getElementById('p'+current).classList.remove('active');current=n;document.getElementById('p'+n).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function blowCandle(){
+ if(revealed)return; revealed=true;
+ document.getElementById('flame').classList.add('out');
+ document.getElementById('candleHint').textContent='Wish made! Your surprise is here… 💗';
+ document.getElementById('blowBtn').textContent='Surprise revealed ✓';
+ // Reveal the birthday song + wish + photo immediately after the flame goes out.
+ setTimeout(()=>{go(3);playBirthdaySong();},450);
+}
+function playBirthdaySong(){
+ const player=document.getElementById('birthdayAudio');
+ if(!player){document.getElementById('songStatus').textContent='♪ Add happy-birthday-classic.mp3 beside index.html';return;}
+ player.currentTime=0;
+ player.play().then(()=>{document.getElementById('songStatus').textContent='♪ Playing your birthday song 🎶';})
+ .catch(()=>{document.getElementById('songStatus').innerHTML='Tap to play your birthday song 🎶 <button class="btn" onclick="playBirthdaySong()">Play song</button>';});
+}
+function loadPhoto(event){const file=event.target.files&&event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=e=>{document.getElementById('photoArea').innerHTML='<img class="photo" alt="Kritika birthday photo" src="'+e.target.result+'">';};reader.readAsDataURL(file);}
+</script>
+</body>
+</html>
