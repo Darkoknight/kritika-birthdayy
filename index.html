@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuchu Puchu — A Birthday Surprise</title>
+<style>
+:root{--rose:#b76e79;--ink:#49343b;--cream:#fffaf6;--gold:#c6a15b;--pink:#f7e6e8}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+.page{min-height:100svh;display:none;align-items:center;justify-content:center;text-align:center;padding:28px 20px;position:relative;overflow:hidden;background:radial-gradient(circle at top,#fff 0,#fffaf6 58%,#f8e9e9 100%)}
+.page.active{display:flex;animation:fade .65s ease}.content{width:min(680px,100%);position:relative;z-index:2}
+.eyebrow{letter-spacing:.25em;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--gold)}h1{font-size:clamp(2.7rem,9vw,5.5rem);font-weight:400;line-height:1.05;margin:18px 0;color:var(--rose)}h2{font-size:clamp(2rem,6vw,3.2rem);font-weight:400;margin:14px 0;color:var(--rose)}p{line-height:1.8;font-size:1.05rem}.ornament{color:var(--gold);letter-spacing:.4em;font-size:1.3rem;margin:18px}
+button,.upload-label{background:var(--rose);color:white;border:0;border-radius:40px;padding:13px 23px;font-size:14px;letter-spacing:.04em;cursor:pointer;margin:8px;box-shadow:0 8px 20px #b76e7925}button.secondary{background:transparent;color:var(--rose);border:1px solid #d9aeb4;box-shadow:none}.small{font:12px Arial,sans-serif;letter-spacing:.06em;color:#8b7077}
+.heart{font-size:clamp(7rem,24vw,12rem);cursor:pointer;display:inline-block;filter:drop-shadow(0 10px 12px #b76e7930);animation:pulse 1.7s infinite}.heart.open{animation:pop .5s forwards}
+.cake{font-size:6rem;margin:12px}.lyrics{white-space:pre-line;background:#fff8f4;border:1px solid #ead8d0;border-radius:18px;padding:16px;line-height:1.8;margin:18px auto;max-width:420px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:18px 0}.gallery img{width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid #ead8d0}.upload-label{display:inline-block}
+.question{font-size:1.1rem;margin:24px 0 12px}.answers{display:grid;gap:9px;max-width:480px;margin:auto}.answers button{background:#fff;color:var(--ink);border:1px solid #ead8d0;box-shadow:none;text-align:left}.answers button:hover{background:var(--pink)}.feedback{min-height:24px;color:var(--rose)}
+.wish{text-align:left;background:#fffdfb;border:1px solid #ead8d0;padding:clamp(20px,5vw,36px);border-radius:22px;box-shadow:0 12px 40px #8e59600c}.wish p{font-size:1rem}
+.float{position:absolute;font-size:2rem;opacity:.35;animation:float 7s ease-in-out infinite}.float:nth-child(1){left:8%;top:15%}.float:nth-child(2){right:9%;top:25%;animation-delay:1s}.float:nth-child(3){left:18%;bottom:12%;animation-delay:2s}.float:nth-child(4){right:15%;bottom:14%;animation-delay:3s}
+.shayari{font-size:1.18rem;line-height:2;background:#fffdfb;border:1px solid #ead8d0;border-radius:20px;padding:25px}
+.nav{position:absolute;bottom:15px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:8px;z-index:5}.dots{font:11px Arial,sans-serif;color:#a78a8f;margin:0 6px}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{transform:scale(1.06)}}@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.4) rotate(-8deg)}100%{transform:scale(0);opacity:0}}@keyframes float{50%{transform:translateY(-22px) rotate(7deg)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body>
+<section class="page active" id="p0"><div class="content"><div class="eyebrow">A little birthday surprise</div><div class="ornament">✧ ─── ♡ ─── ✧</div><h1>Kritika,<br><i>Kuchu Puchu</i> 😚</h1><p>A tiny corner of the universe, made just for your special day.</p><div class="ornament">✦ 24 · 11 · 2026 ✦</div><button onclick="go(1)">Enter your little world ✨</button><p class="small">MADE WITH ♡ BY ARYAN</p></div></section>
+<section class="page" id="p1"><div class="content"><div class="eyebrow">For the birthday girl</div><h2>A little love, wrapped in a bow</h2><p>Tap the heart… there’s a tiny surprise inside.</p><div class="heart" id="heart" onclick="popHeart()">💗</div><p id="heartText" class="small">ONE TAP AWAY FROM A SURPRISE</p><button onclick="go(2)">Next surprise →</button></div></section>
+<section class="page" id="p2"><div class="content"><div class="eyebrow">Make a wish</div><h2>One candle. A thousand wishes.</h2><div class="cake">🎂</div><p>Tap the candle button to make your birthday wish.</p><button onclick="birthdaySong()">🕯️ Blow the candle & play the birthday song</button><div class="lyrics">Happy birthday to you
+Happy birthday to you
+Happy birthday, dear Kritika
+Happy birthday to you! 🎶</div><p class="small" id="songStatus">Your photo memories can go here 💌</p><label class="upload-label" for="photos">＋ Add your photos</label><input id="photos" type="file" accept="image/*" multiple hidden onchange="addPhotos(event)"><div class="gallery" id="gallery"></div><button onclick="go(3)">Let’s play a quiz →</button></div></section>
+<section class="page" id="p3"><div class="content"><div class="eyebrow">A tiny friendship quiz</div><h2>How well do you know us?</h2><div id="quiz"></div><div class="feedback" id="feedback"></div><button class="secondary" onclick="resetQuiz()">Try again</button><button onclick="go(4)">Read your birthday wish →</button></div></section>
+<section class="page" id="p4"><div class="content"><div class="eyebrow">A note from Aryan</div><h2>For your 18th chapter ✨</h2><div class="wish">
+<p><b>Happy 18th Birthday, Kritika! 🎂🎀</b></p>
+<p>Welcome to a beautiful new chapter of your life! ✨ May your 18th year be filled with endless happiness, unforgettable memories, success, and countless reasons to smile.</p>
+<p>You deserve all the beautiful things this world has to offer. Never stop being your cute, crazy, and wonderful self. Keep chasing your dreams, spreading happiness, and making every moment special.</p>
+<p>From our silly fights to our random conversations, every little memory has its own place in this friendship. May we always keep laughing at the smallest things, teasing each other for no reason, and creating memories worth remembering.</p>
+<p>Stay blessed, keep shining, and never let that beautiful smile fade. May all your wishes come true and may this new journey bring you everything your heart hopes for. 💗</p>
+<p><b>Happy 18th Birthday, Kuchu Puchu! 😚🎀</b></p><p>With lots of wishes and friendship,<br><b>— Aryan ✨</b></p>
+</div><button onclick="go(5)">Let’s celebrate →</button></div></section>
+<section class="page" id="p5"><span class="float">🎈</span><span class="float">✨</span><span class="float">🎀</span><span class="float">🎉</span><div class="content"><div class="eyebrow">Today is all about you</div><h1>Keep shining,<br>Kritika ✨</h1><p>May your year be softer, brighter, funnier, and full of beautiful surprises.</p><div class="ornament">♡ ✦ ♡ ✦ ♡</div><button onclick="go(6)">One last thing…</button></div></section>
+<section class="page" id="p6"><div class="content"><div class="eyebrow">The final page</div><h2>Birthday wali shayari 😂</h2><div class="shayari">Kuchu Puchu ka style bemisaal,<br>reply mein “so gye” — kya kamaal!<br>Birthday pe cake aur gifts ki line,<br>par treat dene ki baari aaye toh offline! 😂<br><br>Hasti rehna, chamakti rehna,<br>aur Aryan ko tang karna…<br>yeh haq kabhi mat khona. 🎀</div><div class="ornament">THE END · BUT FRIENDSHIP CONTINUES</div><button onclick="go(0)">Replay the surprise ↺</button><p class="small">MADE WITH ♡ BY ARYAN</p></div></section>
+<script>
+let current=0;function go(n){document.getElementById('p'+current).classList.remove('active');current=n;document.getElementById('p'+current).classList.add('active');window.scrollTo(0,0)}
+function popHeart(){let h=document.getElementById('heart');h.classList.add('open');document.getElementById('heartText').textContent='SURPRISE! YOU DESERVE ALL THE HAPPINESS 💗';setTimeout(()=>{h.classList.remove('open');h.textContent='💝'},520)}
+function birthdaySong(){document.getElementById('songStatus').textContent='Happy Birthday, Kritika! 🎶';try{let ctx=new (window.AudioContext||window.webkitAudioContext)();let notes=[392,392,440,392,523,494,392,392,440,392,587,523,392,392,784,659,523,494,440,698,698,659,523,587,523];notes.forEach((f,i)=>{let o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,ctx.currentTime+i*.28);g.gain.exponentialRampToValueAtTime(.12,ctx.currentTime+i*.28+.02);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+i*.28+.23);o.connect(g);g.connect(ctx.destination);o.start(ctx.currentTime+i*.28);o.stop(ctx.currentTime+i*.28+.25)})}catch(e){}}
+function addPhotos(e){let g=document.getElementById('gallery');[...e.target.files].forEach(f=>{let img=document.createElement('img');img.alt='Birthday memory';img.src=URL.createObjectURL(f);g.appendChild(img)})}
+const qs=[{q:'Aryan aur Kritika ki friendship ki vibe kya hai?',a:['Ladna aur phir baat karna 😂','Sirf serious talks','Ek dusre ko ignore karna'],c:0},{q:'Kritika ko ek royal title dena ho toh?',a:['Queen of Banaras','Drama Queen 👑','Cutie Patootie 🎀'],c:2},{q:'Aryan ka message late aaye toh Kritika kya bolti hai?',a:['Koi baat nahi','Good morning 😂','So gye 😴🎀'],c:2}];let qi=0,score=0;
+function renderQuiz(){let q=qs[qi];document.getElementById('quiz').innerHTML='<div class="question"><span class="small">QUESTION '+(qi+1)+' OF '+qs.length+'</span><br>'+q.q+'</div><div class="answers">'+q.a.map((a,i)=>'<button onclick="answer('+i+')">'+String.fromCharCode(65+i)+') '+a+'</button>').join('')+'</div>'}
+function answer(i){let q=qs[qi];let fb=document.getElementById('feedback');if(i===q.c){score++;fb.textContent='Correct! You know this friendship 😂💗'}else fb.textContent='Oops! Nice try 😚';qi++;if(qi<qs.length)setTimeout(renderNext,700);else setTimeout(()=>{document.getElementById('quiz').innerHTML='<h2>'+score+' / '+qs.length+' correct! 🎀</h2><p>Thanks for playing, Kuchu Puchu!</p>';fb.textContent=''},700)}
+function renderNext(){renderQuiz();document.getElementById('feedback').textContent=''}
+function resetQuiz(){qi=0;score=0;document.getElementById('feedback').textContent='';renderQuiz()}renderQuiz();
+</script></body></html>
